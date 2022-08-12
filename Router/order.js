@@ -10,7 +10,7 @@ const toid=mongoose.Types.ObjectId
 router.get("/", async (request,response)=>{
 
     try {
-        const orders= await Order.find()
+        const orders= await Order.find().populate("product");
         
         response.status(200).json(orders)
     } catch (error) {
