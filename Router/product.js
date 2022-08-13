@@ -18,19 +18,7 @@ router.get("/", async (request,response)=>{
     }
     
     );
-   
-    router.get("/comment",(resource,response)=>{
-   
-       response.send("comment");
-   
-       //
-   
-      
-   
-   
-    }
-    
-    );
+
     router.post('/', async (request,response)=>{
    
           const product= new Product({

@@ -1,9 +1,11 @@
 
 const express=require("express") ;
+const cors=require('cors')
 const app= express();
 
 const mongoose=require("mongoose");
 require("dotenv/config");
+
 const bodyParser=require('body-parser');
 postRouter=require('./Router/posts');
 productRouter  = require('./Router/product');
@@ -15,9 +17,13 @@ orderRouter  = require('./Router/order');
 
 
 
+//cros
+app.use(cors())
 
  //BodyParser
 app.use(bodyParser.json());
+
+
 
 //ROUTER
 
@@ -26,15 +32,8 @@ app.use('/product',productRouter);
 app.use('/order',orderRouter);
 
 
- app.get("/",(resource,response)=>{
 
-    response.send("Node js server");
-
-    //
-
- }
  
- );
  
 
     //connect
